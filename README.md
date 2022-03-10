@@ -4,3 +4,10 @@
 
 This is to calculate Jacobian of a function numerically.
 See: http://www.maths.lth.se/na/courses/FMN081/FMN081-06/lecture7.pdf
+
+
+March 10, 2022
+
+- Added the Complex-Step Derivative Approximation (CSDA) method.  
+See: https://epubs.siam.org/doi/10.1137/0704019
+

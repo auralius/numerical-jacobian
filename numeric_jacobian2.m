@@ -1,10 +1,12 @@
-function jac = numeric_jacobian(f, x, epsilon)
+function jac = numeric_jacobian2(f, x, epsilon)
 % Calculate Jacobian of function f at given x
+% Complex-Step Derivative Approximation (CSDA) Method
 %
 % Inputs:
-%   f can be a vector of function, but make sure it is a row vector
 %   x is where the jacobian is being evaluated, it a row or column vector 
+%   f can be a vector of function, but make sure it is a row vector (mx1)
 %   epsilon is a very small number
+%
 
 if nargin < 3
     epsilon = 1e-5; 
@@ -14,15 +16,11 @@ epsilon_inv = 1/epsilon;
 
 nx = length(x); % Dimension of the input x;
 
-f0 = feval(f, x); % caclulate f0, when no perturbation happens
-
-jac = zeros(length(f0), nx);
-
 % Do perturbation
-for i = 1 : nx
+for k = 1 : nx
     x_ = x;
-    x_(i) =  x(i) + epsilon;
-    jac(:, i) = (feval(f, x_) - f0) .* epsilon_inv;
+    x_(k) =  x(k) + 1i*epsilon;
+    jac(:, k) = imag(feval(f, x_))  .* epsilon_inv;
 end
 
     
