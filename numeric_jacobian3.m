@@ -1,6 +1,6 @@
-function jac = numeric_jacobian(f, x, epsilon)
+function jac = numeric_jacobian3(f, x, epsilon)
 % Calculate Jacobian of function f at given x
-% Standard finite difference method
+% Central Difference Method
 %
 % Inputs:
 %   f can be a vector of function, but make sure it is a row vector
@@ -15,15 +15,14 @@ epsilon_inv = 1/epsilon;
 
 nx = length(x); % Dimension of the input x;
 
-f0 = feval(f, x); % caclulate f0, when no perturbation happens
-
-jac = zeros(length(f0), nx);
-
 % Do perturbation
 for i = 1 : nx
     xplus = x;
+    xminus = x;
     xplus(i) =  x(i) + epsilon;
-    jac(:, i) = (feval(f, xplus) - f0) .* epsilon_inv;
+    xminus(i) =  x(i) - epsilon;
+    jac(:, i) = 0.5 * epsilon_inv * (feval(f, xplus) - feval(f, xminus));
+end
 end
 
     

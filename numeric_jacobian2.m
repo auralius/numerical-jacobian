@@ -18,9 +18,9 @@ nx = length(x); % Dimension of the input x;
 
 % Do perturbation
 for k = 1 : nx
-    x_ = x;
-    x_(k) =  x(k) + 1i*epsilon;
-    jac(:, k) = imag(feval(f, x_))  .* epsilon_inv;
+    xplus = x;
+    xplus(k) =  x(k) + 1i*epsilon;
+    jac(:, k) = imag(feval(f, xplus))  .* epsilon_inv;
 end
 
     

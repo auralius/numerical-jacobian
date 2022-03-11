@@ -12,7 +12,11 @@ fprintf('\nComplex-step derivative approximation method:\n')
 jac4 = numeric_jacobian2(@test_func1, [1 1], 1e-2)
 jac5 = numeric_jacobian2(@test_func2, [1 1], 1e-2)
 jac6 = numeric_jacobian2(@test_func3, [0 1 1], 1e-2)
-
+%---------------------------------------------
+fprintf('\nCentral difference method:\n')
+jac7 = numeric_jacobian3(@test_func1, [1 1], 1e-2)
+jac8 = numeric_jacobian3(@test_func2, [1 1], 1e-2)
+jac9 = numeric_jacobian3(@test_func3, [0 1 1], 1e-2)
 end
 
 %%
