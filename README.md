@@ -11,3 +11,6 @@ March 10, 2022
 - Added the Complex-Step Derivative Approximation (CSDA) method.  
 See: https://epubs.siam.org/doi/10.1137/0704019
 
+March 11, 2022
+
+- Added the central difference method.
