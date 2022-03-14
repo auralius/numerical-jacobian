@@ -14,3 +14,7 @@ See: https://epubs.siam.org/doi/10.1137/0704019
 March 11, 2022
 
 - Added the central difference method.
+
+March 11, 2022
+
+- Added benchmark results of the three methods.

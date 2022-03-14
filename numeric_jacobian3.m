@@ -1,6 +1,6 @@
 function jac = numeric_jacobian3(f, x, epsilon)
 % Calculate Jacobian of function f at given x
-% Central Difference Method
+% Central Finite Difference Method (CFDM)
 %
 % Inputs:
 %   f can be a vector of function, but make sure it is a row vector
