@@ -18,3 +18,6 @@ March 11, 2022
 March 11, 2022
 
 - Added benchmark results of the three methods.
+
+![](https://github.com/auralius/numerical-jacobian/blob/master/relative_erorrs.png)
+
